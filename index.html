@@ -68,18 +68,120 @@
       </div>
       <div class="content content-3">
         <div class="title">Subtraction</div>
-        <p></p>
-		<a href="FreeMathSubtraction.html">Subtraction Exercise</a>
+                <script>
+            
+            function makeQuestion()
+            {
+			    var num1 = Math.floor(Math.random() * 11);
+			    var num2 = Math.floor(Math.random() * 11);
+			    var numMax = Math.max(num1,num2);
+				var numMin = Math.min(num1,num2);
+				var ans = numMax - numMin;
+				var newQuestion = numMax.toString() + " - " + numMin.toString() + " = ?"; 
+				var Question = [numMax, numMin, ans, newQuestion];
+				return Question;
+            }
+			
+			function calc()
+            {
+			    var Question = makeQuestion();
+				var myAns = prompt(Question[3]);
+				var myResult = Question[0] + " - " + Question[1] + " = " + myAns; 
+
+//				document.getElementById("demo1").innerHTML = Question[3];		
+
+			if(myAns == Question[2]){
+				document.getElementById("demo1").innerHTML = myResult;		
+				document.getElementById("demo2").innerHTML = "correct";		
+			}else{
+				document.getElementById("demo1").innerHTML = myResult;		
+				document.getElementById("demo2").innerHTML = "wrong, the correct answer is: "+Question[2];				
+			}
+
+			}
+			
+        </script>
+    <button onclick="calc();">New Question</button>
+    <p id="demo1">Answer</p>
+    <p id="demo2">Result</p>    
       </div>
       <div class="content content-4">
         <div class="title">Multiplication</div>
-        <p></p>
-		<a href="FreeMathMultiplication.html">Multiplication Exercise</a>
+        <script>
+            
+            function makeQuestion()
+            {
+			    var num1 = Math.floor(Math.random() * 11);
+			    var num2 = Math.floor(Math.random() * 11);
+			    var ans = num1*num2;
+				var newQuestion = num1.toString() + " x " + num2.toString() + " = ?"; 
+//				document.getElementById("num1").innerHTML = newQuestion;
+				var Question = [num1, num2, ans, newQuestion];
+				return Question;
+            }
+			
+			function calc()
+            {
+			    var Question = makeQuestion();
+				var myAns = prompt(Question[3]);
+				var myResult = Question[0] + " x " + Question[1] + " = " + myAns; 
+
+//				document.getElementById("demo1").innerHTML = Question[3];		
+
+			if(myAns == Question[2]){
+				document.getElementById("demo1").innerHTML = myResult;		
+				document.getElementById("demo2").innerHTML = "correct";		
+			}else{
+				document.getElementById("demo1").innerHTML = myResult;		
+				document.getElementById("demo2").innerHTML = "wrong, the correct answer is: "+Question[2];				
+			}
+
+			}
+			
+        </script>
+        
+    <button onclick="calc();">New Question</button>
+    <p id="demo1">Answer</p>
+    <p id="demo2">Result</p>    
       </div>
       <div class="content content-5">
         <div class="title">Division</div>
-        <p></p>
-		<a href="FreeMathDivision.html">Division Exercise</a>
+        <script>
+            
+            function makeQuestion()
+            {
+			    var num1 = Math.floor(Math.random() * 10+1);
+			    var ans	= Math.floor(Math.random() * 7+4);
+			    var num2 = num1*ans;
+				var newQuestion = num2.toString() + " / " + num1.toString() + " = ?";
+//				document.getElementById("num1").innerHTML = newQuestion;
+				var Question = [num1, num2, ans, newQuestion];
+				return Question;
+            }
+			
+			function calc()
+            {
+			    var Question = makeQuestion();
+				var myAns = prompt(Question[3]);
+				var myResult = Question[1] + " / " + Question[0] + " = " + myAns; 
+
+//				document.getElementById("demo1").innerHTML = Question[3];		
+
+			if(myAns == Question[2]){
+				document.getElementById("demo1").innerHTML = myResult;		
+				document.getElementById("demo2").innerHTML = "correct";		
+			}else{
+				document.getElementById("demo1").innerHTML = myResult;		
+				document.getElementById("demo2").innerHTML = "wrong, the correct answer is: "+Question[2];				
+			}
+
+			}
+			
+        </script>
+
+	      <button onclick="calc();">New Question</button>
+    <p id="demo1">Answer</p>
+    <p id="demo2">Result</p>    
       </div>
     </section>
   </div>
