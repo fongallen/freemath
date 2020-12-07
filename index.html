@@ -1,62 +1,56 @@
 <!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Pure CSS Tabs Design | CodingNepal</title> -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>Free Maths</header>
+    <input type="radio" name="slider" checked id="home">
+    <input type="radio" name="slider" id="blog">
+    <input type="radio" name="slider" id="code">
+    <input type="radio" name="slider" id="help">
+    <input type="radio" name="slider" id="about">
+    <nav>
+      <label for="home" class="home">Home</label>
+      <label for="blog" class="blog">Addition</label>
+      <label for="code" class="code">Subtraction</label>
+      <label for="help" class="help">Multiplication</label>
+      <label for="about" class="about">Division</label>
+      <div class="slider"></div>
+    </nav>
+    <section>
+      <div class="content content-1">
+        <div class="title">This is a Home content</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero aspernatur nobis provident dolores molestias quia quisquam laborum, inventore quis, distinctioa, fugit repudiandae delectus sunt ipsam! Odio illo at quia doloremque fugit iops, asperiores? Consectetur esse officia labore voluptatum blanditiis molestias dic voluptas est, minima unde sequi, praesentium dicta suscipit quisquam iure sed, nemo.</p>
+      </div>
+      <div class="content content-2">
+        <div class="title">Addition</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit amet. Possimus doloris nesciunt mollitia culpa sint itaque, vitae praesentium assumenda suscipit fugit doloremque adipisci doloribus, sequi facere itaque cumque accusamus, quam molestias sed provident quibusdam nam deleniti. Autem eaque aut impedit eo nobis quia, eos sequi tempore! Facere ex repellendus, laboriosam perferendise. Enim quis illo harum, exercitationem nam totam fugit omnis natus quam totam, repudiandae dolor laborum! Commodi?</p>
+		<a href="FreeMathAddition.html">Addition Exercise</a>
+      </div>
+      <div class="content content-3">
+        <div class="title">Subtraction</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, debitis nesciunt! Consectetur officiis, libero nobis dolorem pariatur quisquam temporibus. Labore quaerat neque facere itaque laudantium odit veniam consectetur numquam delectus aspernatur, perferendis repellat illo sequi excepturi quos ipsam aliquid est consequuntur.</p>
+		<a href="FreeMathSubtraction.html">Subtraction Exercise</a>
+      </div>
+      <div class="content content-4">
+        <div class="title">Multiplication</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim reprehenderit null itaq, odio repellat asperiores vel voluptatem magnam praesentium, eveniet iure ab facere officiis. Quod sequi vel, rem quam provident soluta nihil, eos. Illo oditu omnis cumque praesentium voluptate maxime voluptatibus facilis nulla ipsam quidem mollitia! Veniam, fuga, possimus. Commodi, fugiat aut ut quorioms stu necessitatibus, cumque laborum rem provident tenetur.</p>
+		<a href="FreeMathMultiplication.html">Multiplication Exercise</a>
+      </div>
+      <div class="content content-5">
+        <div class="title">Division</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur officia sequi aliquam. Voluptatem distinctio nemo culpa veritatis nostrum fugit rem adipisci ea ipsam, non veniam ut aspernatur aperiam assumenda quis esse soluta vitae, placeat quasi. Iste dolorum asperiores hic impedit nesciunt atqu, officia magnam commodi iusto aliquid eaque, libero.</p>
+		<a href="FreeMathDivision.html">Division Exercise</a>
+      </div>
+    </section>
+  </div>
 
-<html>
-    <head>
-        
-        <title>javascript: calculate two numbers</title>
-        <meta charset="windows-1252">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script>
-            
-            function makeQuestion()
-            {
-			    var num1 = Math.floor(Math.random() * 100);
-				var num2 = Math.floor(Math.random() * 100);
-			    var num3 = Math.random();
-			    var numMax = Math.max(num1,num2);
-				var numMin = Math.min(num1,num2);
-	
-				if (num3 >0.5){
-				numMin = -numMin;
-				var newQuestion = numMax.toString() + " " + numMin.toString() + " = ?"; 
-				}else{
-				var newQuestion = numMax.toString() + " + " + numMin.toString() + " = ?"; 
-				}		
-
-				var ans = numMax + numMin;
-				var Question = [numMax, numMin, ans, newQuestion];
-				return Question;
-            }
-			
-			function calc()
-            {
-			    var Question = makeQuestion();
-				var myAns = prompt(Question[3]);
-				var myResult = Question[3] + "  Your answer is: " + myAns; 
-
-//				document.getElementById("demo1").innerHTML = Question[3];		
-
-			if(myAns == Question[2]){
-				document.getElementById("demo1").innerHTML = myResult;		
-				document.getElementById("demo2").innerHTML = "correct";		
-			}else{
-				document.getElementById("demo1").innerHTML = myResult;		
-				document.getElementById("demo2").innerHTML = "wrong, the correct answer is: "+Question[2];				
-			}
-
-			}
-			
-        </script>
-		
-		
-        
-    </head>
-    <body>
-    <button onclick="calc();">New Question</button>
-    <p id="demo1">Answer</p>
-    <p id="demo2">Result</p>    
-    
-        
-    </body>
+</body>
 </html>
