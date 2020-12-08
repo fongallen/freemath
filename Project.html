@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Free Maths</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="Project.CSS">
+<script src="Project.js"></script>
+
+</head>
+<body>
+
+<div class="sidenav">
+  <button class="dropdown-btn">Addition 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#" onclick="calcAddLv1()">Level 1</a>
+    <a href="#" onclick="calcAddLv2()">Level 2</a>
+    <a href="#" onclick="calcAddLv3()">Level 3</a>
+  </div>
+  <button class="dropdown-btn">Subtraction 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#" onclick="calcSubLv1()">Level 1</a>
+    <a href="#" onclick="calcSubLv2()">Level 2</a>
+    <a href="#" onclick="calcSubLv3()">Level 3</a>
+  </div>
+  <button class="dropdown-btn">Multiplication 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#" onclick="calcMultiLv1()">Level 1</a>
+    <a href="#" onclick="calcMultiLv2()">Level 2</a>
+    <a href="#" onclick="calcMultiLv3()">Level 3</a>
+  </div>
+  <button class="dropdown-btn">Division
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#" onclick="calcDivLv1()">Level 1</a>
+    <a href="#" onclick="calcDivLv2()">Level 2</a>
+    <a href="#" onclick="calcDivLv3()">Level 3</a>
+  </div>
+</div>
+
+<div class="main">
+  <h2>Free Maths</h2>
+  <p>Click on the dropdown button to begain.</p>
+  <p id="demo1">Answer</p>
+  <p id="demo2">Result</p>    
+
+</div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 
