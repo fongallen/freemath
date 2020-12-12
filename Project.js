@@ -27,7 +27,6 @@
 			    var num2Div = num1Div*ansDiv;
 				var newQuestionDiv = num2Div.toString() + " / " + num1Div.toString() + " = ?";
 
-
 				var Question = [
 				num1plus, num2plus, ansplus, newQuestionplus,
 				numMaxmius, numMinmius, ansmius, newQuestionmius,

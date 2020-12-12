@@ -1,164 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Free Maths</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<title>Free Maths</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="ProjectTest.CSS">
+<script src="ProjectTest.js"></script>
+
 </head>
-
-        <script>
-            
-            function makeQuestion()
-            {
-			 //Addition 
-			    var num1plus = Math.floor(Math.random() * 11);
-			    var num2plus = Math.floor(Math.random() * 11);
-			    var ansplus = num1plus + num2plus;
-			    var newQuestionplus = num1plus.toString() + " + " + num2plus.toString() + " = ?"; 
-
-			//Subtraction
-			    var num1mius = Math.floor(Math.random() * 11);
-			    var num2mius = Math.floor(Math.random() * 11);
-			    var numMaxmius = Math.max(num1mius,num2mius);
-			    var numMinmius = Math.min(num1mius,num2mius);
-			    var ansmius = numMaxmius - numMinmius;
-			    var newQuestionmius = numMaxmius.toString() + " - " + numMinmius.toString() + " = ?"; 
-
-			//Multiplication
-			    var num1Multi = Math.floor(Math.random() * 11);
-			    var num2Multi = Math.floor(Math.random() * 11);
-			    var ansMulti = num1Multi*num2Multi;
-			    var newQuestionMulti = num1Multi.toString() + " x " + num2Multi.toString() + " = ?"; 
-
-			
-			//Division
-			    var num1Div = Math.floor(Math.random() * 10+1);
-			    var ansDiv	= Math.floor(Math.random() * 7+4);
-			    var num2Div = num1Div*ansDiv;
-			    var newQuestionDiv = num2Div.toString() + " / " + num1Div.toString() + " = ?";
-
-
-			    var Question = [
-				num1plus, num2plus, ansplus, newQuestionplus,
-				numMaxmius, numMinmius, ansmius, newQuestionmius,
-				num1Multi, num2Multi, ansMulti, newQuestionMulti,
-				num1Div, num2Div, ansDiv, newQuestionDiv];
-			    return Question;
-            }
-			
-			function calcAdd()
-            {
-			    var Question = makeQuestion();
-			    var myAns = prompt(Question[3]);
-			    var myResult = Question[0] + " + " + Question[1] + " = " + myAns; 
-
-			if(myAns == Question[2]){
-				document.getElementById("demo1").innerHTML = myResult;		
-				document.getElementById("demo2").innerHTML = "correct";		
-			}else{
-				document.getElementById("demo1").innerHTML = myResult;		
-				document.getElementById("demo2").innerHTML = "wrong, the correct answer is: "+Question[2];				
-			}
-			}
-			
-			function calcSub()
-            {
-			    var Question = makeQuestion();
-			    var myAns = prompt(Question[7]);
-			    var myResult = Question[4] + " - " + Question[5] + " = " + myAns; 
-
-			if(myAns == Question[6]){
-				document.getElementById("demo3").innerHTML = myResult;		
-				document.getElementById("demo4").innerHTML = "correct";		
-			}else{
-				document.getElementById("demo3").innerHTML = myResult;		
-				document.getElementById("demo4").innerHTML = "wrong, the correct answer is: "+Question[6];				
-			}
-			}
-
-			function calcMulti()
-            {
-			    var Question = makeQuestion();
-			    var myAns = prompt(Question[11]);
-			    var myResult = Question[8] + " x " + Question[9] + " = " + myAns; 
-
-			if(myAns == Question[10]){
-				document.getElementById("demo5").innerHTML = myResult;		
-				document.getElementById("demo6").innerHTML = "correct";		
-			}else{
-				document.getElementById("demo5").innerHTML = myResult;		
-				document.getElementById("demo6").innerHTML = "wrong, the correct answer is: "+Question[10];				
-			}
-			}
-
-
-			
-			function calcDiv()
-            {
-			    var Question = makeQuestion();
-			    var myAns = prompt(Question[15]);
-			    var myResult = Question[13] + " / " + Question[12] + " = " + myAns; 
-
-			if(myAns == Question[14]){
-				document.getElementById("demo7").innerHTML = myResult;		
-				document.getElementById("demo8").innerHTML = "correct";		
-			}else{
-				document.getElementById("demo7").innerHTML = myResult;		
-				document.getElementById("demo8").innerHTML = "wrong, the correct answer is: "+Question[14];				
-			}
-			}
-			
-        </script>
-
-
 <body>
-  <div class="wrapper">
-    <header>Free Maths</header>
-    <input type="radio" name="slider" checked id="home">
-    <input type="radio" name="slider" id="blog">
-    <input type="radio" name="slider" id="code">
-    <input type="radio" name="slider" id="help">
-    <input type="radio" name="slider" id="about">
-    <nav>
-      <label for="home" class="home">Home</label>
-      <label for="blog" class="blog">Addition</label>
-      <label for="code" class="code">Subtraction</label>
-      <label for="help" class="help">Multiplication</label>
-      <label for="about" class="about">Division</label>
-      <div class="slider"></div>
-    </nav>
-    <section>
-      <div class="content content-1">
-        <div class="title">Just feel free to use this tiny tool. Enjoy！</div>
-		<p></p>
-      </div>
-      <div class="content content-2">
-        <div class="title">Addition</div>
-    <button onclick="calcAdd();">New Question</button>
-    <p id="demo1">Answer</p>
-    <p id="demo2">Result</p>    		
-      </div>
-      <div class="content content-3">
-        <div class="title">Subtraction</div>
-    <button onclick="calcSub();">New Question</button>
-    <p id="demo3">Answer</p>
-    <p id="demo4">Result</p>    		
-      </div>
-      <div class="content content-4">
-        <div class="title">Multiplication</div>
-    <button onclick="calcMulti();">New Question</button>
-    <p id="demo5">Answer</p>
-    <p id="demo6">Result</p>    		
-      </div>
-      <div class="content content-5">
-        <div class="title">Division</div>
-    <button onclick="calcDiv();">New Question</button>
-    <p id="demo7">Answer</p>
-    <p id="demo8">Result</p>    		
-      </div>
-    </section>
+
+<div class="sidenav">
+  <button class="dropdown-btn" onclick="location.href='project.html'">Integer Arithmetic</button>
+  <button class="dropdown-btn" onclick="location.href='projectdec.html'">Decimal Arithmetic</button>
+  <button class="dropdown-btn" onclick="location.href='projectfraction.html'">Prime Numbers, HCF(GCD), LCM and Fractions</button>
+
+  <div class="dropdown-container">
+    <a href="#" onclick="calc5PrimeNum()">Prime Numbers</a>
+    <a href="#" onclick="calc5GCD()">HCF (GCD)</a>
+    <a href="#" onclick="calc5LCM()">LCM</a>
   </div>
+</div>
+
+<div class="main">
+  <h2>Free Maths</h2>
+  <p>Click on the dropdown button and select Exercise.</p>
+  <p id="ExAndLv"></p>
+  <p id="Q1"></p>
+  <p id="Q2"></p>
+  <p id="Q3"></p>
+  <p id="Q4"></p>
+  <p id="Q5"></p>
+  
+
+</div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
 
 </body>
-</html>
+</html> 
