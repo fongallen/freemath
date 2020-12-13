@@ -9,7 +9,7 @@ function calcFractiontoDecimal(){
     var denSimp = denTemp/gcd;
 	var questionFractiontoDecimal = "Change the fraction "+numSimp.toString()+"/"+denSimp+" to a decimal."; // a 0 b 1 c 2 d 3 
 	var myAns = prompt(questionFractiontoDecimal+" Input your answer.");
-        var ExAndLv = "Fractions to Decimal";
+        var ExAndLv = "Fraction to Decimal";
 	document.getElementById("ExAndLv").innerHTML = ExAndLv;		
 	if(myAns == numDec){
 		var lastResult = questionFractiontoDecimal+ " Your answer "+myAns.toString()+ " is correct.";
@@ -43,7 +43,7 @@ function calcDecimaltoFraction(){
     var denSimp = denTemp/gcd;
 	var myNumerator = prompt("If "+numDec.toString()+" = a/b, what is the value of a?");
 	var myDenominator = prompt("If "+numDec.toString()+" = a/b, what is the value of b?");
-        var ExAndLv = "Decimal to Fractions";
+        var ExAndLv = "Decimal to Fraction";
 	document.getElementById("ExAndLv").innerHTML = ExAndLv;		
 	if(myNumerator == numSimp && myDenominator == denSimp){
 		var lastResult = questionDecimaltoFraction+ " Your answer "+myNumerator.toString() +"/" +myDenominator.toString()+ " is correct.";
