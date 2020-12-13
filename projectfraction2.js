@@ -9,7 +9,8 @@ function calcFractiontoDecimal(){
     var denSimp = denTemp/gcd;
 	var questionFractiontoDecimal = "Change the fraction "+numSimp.toString()+"/"+denSimp+" to a decimal."; // a 0 b 1 c 2 d 3 
 	var myAns = prompt(questionFractiontoDecimal+" Input your answer.");
-//    document.getElementById("Q1").innerHTML = (myAns == numDec);
+        var ExAndLv = "Fractions to Decimal";
+	document.getElementById("ExAndLv").innerHTML = ExAndLv;		
 	if(myAns == numDec){
 		var lastResult = questionFractiontoDecimal+ " Your answer "+myAns.toString()+ " is correct.";
 	}else{
@@ -42,6 +43,8 @@ function calcDecimaltoFraction(){
     var denSimp = denTemp/gcd;
 	var myNumerator = prompt("If "+numDec.toString()+" = a/b, what is the value of a?");
 	var myDenominator = prompt("If "+numDec.toString()+" = a/b, what is the value of b?");
+        var ExAndLv = "Decimal to Fractions";
+	document.getElementById("ExAndLv").innerHTML = ExAndLv;		
 	if(myNumerator == numSimp && myDenominator == denSimp){
 		var lastResult = questionDecimaltoFraction+ " Your answer "+myNumerator.toString() +"/" +myDenominator.toString()+ " is correct.";
 	}else{
@@ -78,6 +81,8 @@ function calcCompareFractionLv1(){
 	var fractionTwo = c/d;
     if(fractionOne > fractionTwo){sysAns = "A"}else{sysAns = "B"}
     var myAnswer = prompt(questionFraction+ "A or B?");
+        var ExAndLv = "Compare Fractions - Level 1";
+	document.getElementById("ExAndLv").innerHTML = ExAndLv;		
 	if(myAnswer == sysAns){
 		var lastResult = questionFraction+ " (" + sysAns +"): your answer "+myAnswer+" is CORRECT.";
 	}else{
@@ -112,6 +117,8 @@ function calcCompareFractionLv2(){
 	var fractionTwo = c/d;
     if(fractionOne > fractionTwo){sysAns = "A"}else{sysAns = "B"}
     var myAnswer = prompt(questionFraction+ "A or B?");
+        var ExAndLv = "Compare Fractions - Level 2";
+	document.getElementById("ExAndLv").innerHTML = ExAndLv;		
 	if(myAnswer == sysAns){
 		var lastResult = questionFraction+ " (" + sysAns +"): your answer "+myAnswer+" is CORRECT.";
 	}else{
