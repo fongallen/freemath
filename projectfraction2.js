@@ -74,9 +74,11 @@ function calcCompareFractionLv1(){
 	for (i = 0; i < 4; i++) {
 		x[i] = Math.floor(Math.random()*9+1);
 	}
-    if(x[0] == x[1] && x[0] == x[2] && x[0] == x[3]){calcCompareFractionLv1();}
     if(x[0] > x[1]){a=x[1]; b=x[0];}else{a=x[0]; b=x[1]}
     if(x[2] > x[3]){c=x[3]; d=x[2];}else{c=x[2]; d=x[3]}
+    var num1 = a/b;
+    var num2 = c/d;
+    if(num1 == num2){calcCompareFractionLv1()}
 	var questionFraction = "Which number is greater, A("+a.toString()+"/"+b.toString()+") or B( "+c.toString()+"/"+d.toString()+")?"; // a 0 b 1 c 2 d 3 
 	var fractionOne = a/b;
 	var fractionTwo = c/d;
@@ -111,9 +113,11 @@ function calcCompareFractionLv2(){
 	for (i = 0; i < 4; i++) {
 		x[i] = Math.floor(Math.random()*100+1);
 	}
-    if(x[0] == x[1] && x[0] == x[2] && x[0] == x[3]){calcCompareFractionLv2();}
     if(x[0] > x[1]){a=x[1]; b=x[0];}else{a=x[0]; b=x[1]}
     if(x[2] > x[3]){c=x[3]; d=x[2];}else{c=x[2]; d=x[3]}
+    var num1 = a/b;
+    var num2 = c/d;
+    if(num1 == num2){calcCompareFractionLv2()}
 	var questionFraction = "Which number is greater, A("+a.toString()+"/"+b.toString()+") or B( "+c.toString()+"/"+d.toString()+")?"; // a 0 b 1 c 2 d 3 
 	var fractionOne = a/b;
 	var fractionTwo = c/d;
