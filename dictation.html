@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<h1>Dictation</h1>
+</head>
+
+<body>
+<button onclick="hide()" id="hide">Hide</button>
+<button onclick="show()" id="show">Show</button>
+<br>
+<label>Text 1</label>
+<br>
+<input type="text" id="text0" autocomplete="off">
+<br>
+<input onclick="speakText0()" type="button" value="Speak">
+<br>
+<label>Dictation 1:</label>
+<br>
+<input type="text" id="dict0" autocomplete="off">
+<br>
+<p>------------------------------------</p>
+<label>Text 2</label>
+<br>
+<input type="text" id="text1" autocomplete="off">
+<br>
+<input onclick="speakText1()" type="button" value="Speak">
+<br>
+<label>Dictation 2:</label>
+<br>
+<input type="text" id="dict1" autocomplete="off">
+<br>
+<p>------------------------------------</p>
+<label>Text 3</label>
+<br>
+<input type="text" id="text2" autocomplete="off">
+<br>
+<input onclick="speakText2()" type="button" value="Speak">
+<br>
+<label>Dictation 3:</label>
+<br>
+<input type="text" id="dict2" autocomplete="off">
+<br>
+<p>------------------------------------</p>
+<label>Text 4</label>
+<br>
+<input type="text" id="text3" autocomplete="off">
+<br>
+<input onclick="speakText3()" type="button" value="Speak">
+<br>
+<label>Dictation 4:</label>
+<br>
+<input type="text" id="dict3" autocomplete="off">
+<br>
+<p>------------------------------------</p>
+<label>Text 5</label>
+<br>
+<input type="text" id="text4" autocomplete="off">
+<br>
+<input onclick="speakText4()" type="button" value="Speak">
+<br>
+<label>Dictation 5:</label>
+<br>
+<input type="text" id="dict4" autocomplete="off">
+<br>
+
+<br>
+
+<input onclick="checking()" type="button" value="Checking">
+<p id="p0">Result1</p>
+<p id="p1">Result2</p>
+<p id="p2">Result3</p>
+<p id="p3">Result4</p>
+<p id="p4">Result5</p>
+
+<script>
+function speakText0(){
+  var text0 = document.getElementById('text0').value;
+  responsiveVoice.speak(text0,"US English Female",{rate: 0.75});
+}
+
+function speakText1(){
+  var text1 = document.getElementById('text1').value;
+  responsiveVoice.speak(text1,"US English Female",{rate: 0.75});
+}
+
+function speakText2(){
+  var text2 = document.getElementById('text2').value;
+  responsiveVoice.speak(text2,"US English Female",{rate: 0.75});
+}
+
+function speakText3(){
+  var text3 = document.getElementById('text3').value;
+  responsiveVoice.speak(text3,"US English Female",{rate: 0.75});
+}
+
+function speakText4(){
+  var text4 = document.getElementById('text4').value;
+  responsiveVoice.speak(text4,"US English Female",{rate: 0.75});
+}
+
+function checking(){
+  var text0 = document.getElementById('text0').value;
+  var dict0 = document.getElementById('dict0').value;
+  var text1 = document.getElementById('text1').value;
+  var dict1 = document.getElementById('dict1').value;
+  var text2 = document.getElementById('text2').value;
+  var dict2 = document.getElementById('dict2').value;
+  var text3 = document.getElementById('text3').value;
+  var dict3 = document.getElementById('dict3').value;
+  var text4 = document.getElementById('text4').value;
+  var dict4 = document.getElementById('dict4').value;
+
+  if (dict0 == text0){
+	document.getElementById("p0").innerHTML = "Text 1 is CORRECT.";
+  }else{
+	document.getElementById("p0").innerHTML = "Text 1 is not correct. Try Again!";
+  }
+  if (dict1 == text1){
+	document.getElementById("p1").innerHTML = "Text 2 is CORRECT.";
+  }else{
+	document.getElementById("p1").innerHTML = "Text 2 is not correct. Try Again!";
+  }
+  if (dict2 == text2){
+	document.getElementById("p2").innerHTML = "Text 3 is CORRECT.";
+  }else{
+	document.getElementById("p2").innerHTML = "Text 3 is not correct. Try Again!";
+  }
+  if (dict3 == text3){
+	document.getElementById("p3").innerHTML = "Text 4 is CORRECT.";
+  }else{
+	document.getElementById("p3").innerHTML = "Text 4 is not correct. Try Again!";
+  }
+  if (dict4 == text4){
+	document.getElementById("p4").innerHTML = "Text 5 is CORRECT.";
+  }else{
+	document.getElementById("p4").innerHTML = "Text 5 is not correct. Try Again!";
+  }
+}
+
+function hide(){
+  document.getElementById("text0").style.display = "none";
+  document.getElementById("text1").style.display = "none";
+  document.getElementById("text2").style.display = "none";
+  document.getElementById("text3").style.display = "none";
+  document.getElementById("text4").style.display = "none";
+}
+
+function show(){
+  document.getElementById("text0").style.display = "block";
+  document.getElementById("text1").style.display = "block";
+  document.getElementById("text2").style.display = "block";
+  document.getElementById("text3").style.display = "block";
+  document.getElementById("text4").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
