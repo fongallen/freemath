@@ -4,76 +4,90 @@
 	
 <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="dictationstyle.css">
+
 <h1>Dictation</h1>
 </head>
 
 <body>
-<button onclick="hide()" id="hide">Hide</button>
-<button onclick="show()" id="show">Show</button>
-<br>
-<label>Text 1</label>
-<br>
-<input type="text" id="text0" autocomplete="off">
-<br>
-<input onclick="speakText0()" type="button" value="Speak">
-<br>
-<label>Dictation 1:</label>
-<br>
-<input type="text" id="dict0" autocomplete="off">
-<br>
-<p>------------------------------------</p>
-<label>Text 2</label>
-<br>
-<input type="text" id="text1" autocomplete="off">
-<br>
-<input onclick="speakText1()" type="button" value="Speak">
-<br>
-<label>Dictation 2:</label>
-<br>
-<input type="text" id="dict1" autocomplete="off">
-<br>
-<p>------------------------------------</p>
-<label>Text 3</label>
-<br>
-<input type="text" id="text2" autocomplete="off">
-<br>
-<input onclick="speakText2()" type="button" value="Speak">
-<br>
-<label>Dictation 3:</label>
-<br>
-<input type="text" id="dict2" autocomplete="off">
-<br>
-<p>------------------------------------</p>
-<label>Text 4</label>
-<br>
-<input type="text" id="text3" autocomplete="off">
-<br>
-<input onclick="speakText3()" type="button" value="Speak">
-<br>
-<label>Dictation 4:</label>
-<br>
-<input type="text" id="dict3" autocomplete="off">
-<br>
-<p>------------------------------------</p>
-<label>Text 5</label>
-<br>
-<input type="text" id="text4" autocomplete="off">
-<br>
-<input onclick="speakText4()" type="button" value="Speak">
-<br>
-<label>Dictation 5:</label>
-<br>
-<input type="text" id="dict4" autocomplete="off">
-<br>
+<div>
+	<div class="button">
+		<button onclick="hide()" id="hide">Hide</button>
+		<button onclick="show()" id="show">Show</button>
+		<br>
+	</div>
+	<div class="text0">
+		<label>Text 1</label>
+		<br>
+		<input class="text0" type="text" id="text0" autocomplete="off">
+		<br>
+		<input onclick="speakText0()" type="button" value="Speak">
+		<br>
+		<label>Dictation 1:</label>
+		<br>
+		<input class="text0" type="text" id="dict0" autocomplete="off">
+		<br>
+	</div>
+	<div class="text1">
+		<label>Text 2</label>
+		<br>
+		<input class="text1" type="text" id="text1" autocomplete="off">
+		<br>
+		<input onclick="speakText1()" class="button1" type="button" value="Speak">
+		<br>
+		<label>Dictation 2:</label>
+		<br>
+		<input class="text1" type="text" id="dict1" autocomplete="off">
+		<br>
+	</div>
+	<div class="text2">
+		<label>Text 3</label>
+		<br>
+		<input class="text2" type="text" id="text2" autocomplete="off">
+		<br>
+		<input onclick="speakText2()" type="button" value="Speak">
+		<br>
+		<label>Dictation 3:</label>
+		<br>
+		<input class="text2" type="text" id="dict2" autocomplete="off">
+		<br>
+	</div>
+	<div class="text3">
+		<label>Text 4</label>
+		<br>
+		<input class="text3" type="text" id="text3" autocomplete="off">
+		<br>
+		<input onclick="speakText3()" class="button1" type="button" value="Speak">
+		<br>
+		<label>Dictation 4:</label>
+		<br>
+		<input class="text3" type="text" id="dict3" autocomplete="off">
+		<br>
+	</div>
+	<div class="text4">
+		<label>Text 5</label>
+		<br>
+		<input class="text4" type="text" id="text4" autocomplete="off">
+		<br>
+		<input onclick="speakText4()" type="button" value="Speak">
+		<br>
+		<label>Dictation 5:</label>
+		<br>
+		<input class="text4" type="text" id="dict4" autocomplete="off">
+		<br>
+		<br>
+	</div>
+	<div class="checking">
+		<input onclick="checking()" type="button" class="button1" value="Checking">
+		<p id="p0">Result1</p>
+		<p id="p1">Result2</p>
+		<p id="p2">Result3</p>
+		<p id="p3">Result4</p>
+		<p id="p4">Result5</p>
+	</div>
+</div>
 
-<br>
 
-<input onclick="checking()" type="button" value="Checking">
-<p id="p0">Result1</p>
-<p id="p1">Result2</p>
-<p id="p2">Result3</p>
-<p id="p3">Result4</p>
-<p id="p4">Result5</p>
 
 <script>
 function speakText0(){
@@ -141,22 +155,21 @@ function checking(){
 }
 
 function hide(){
-  document.getElementById("text0").style.display = "none";
-  document.getElementById("text1").style.display = "none";
-  document.getElementById("text2").style.display = "none";
-  document.getElementById("text3").style.display = "none";
-  document.getElementById("text4").style.display = "none";
+  document.getElementById("text0").style.visibility='hidden';
+  document.getElementById("text1").style.visibility='hidden';
+  document.getElementById("text2").style.visibility='hidden';
+  document.getElementById("text3").style.visibility='hidden';
+  document.getElementById("text4").style.visibility='hidden';
 }
 
 function show(){
-  document.getElementById("text0").style.display = "block";
-  document.getElementById("text1").style.display = "block";
-  document.getElementById("text2").style.display = "block";
-  document.getElementById("text3").style.display = "block";
-  document.getElementById("text4").style.display = "block";
+  document.getElementById("text0").style.visibility='visible';
+  document.getElementById("text1").style.visibility='visible';
+  document.getElementById("text2").style.visibility='visible';
+  document.getElementById("text3").style.visibility='visible';
+  document.getElementById("text4").style.visibility='visible';
 }
 </script>
 
 </body>
 </html>
-
