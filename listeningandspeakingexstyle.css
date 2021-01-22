@@ -1,0 +1,12 @@
+
+*{
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+
+
+body {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, white, deepskyblue, darkblue, deepskyblue, white);
+  color: white;
+}
