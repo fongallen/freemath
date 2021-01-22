@@ -11,7 +11,7 @@ body {
   color: white;
 }
 
-textarea [type=text] {
+textarea {
   width: 50%;
   padding: 5px 10px;
   margin: 8px 0;
