@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Fraction Simplification</h1>
+<h1 id="demo">Simplify Friction 5/10. (Ans. 1/2)</h1>
+<h2 id="Q6">Question</h2>
+<h2 id="Q7">result</h2>
+<button onclick="genImproperFraction()">New Question</button>
+<br>
+<br>
+<label hidden>Value of (a):</label><input type="number" id="inputp" hidden value="0">
+<label>Value of (a):</label><input type="number" id="inputq">
+<br>
+<label>Value of (b):</label><input type="number" id="inputr">
+<button onclick="myFunction()">Submit</button>
+<p hidden id="Q1">a</p>
+<p hidden id="Q2">b</p>
+<p hidden id="Q3">c</p>
+<p hidden id="Q4">d</p>
+<p hidden id="Q5">e</p>
+
+<script>
+//Numerator and denominator
+
+function myFunction() {
+	var  question_p = document.getElementById("Q3").textContent;
+	var  question_q = document.getElementById("Q4").textContent;
+	var  question_r = document.getElementById("Q5").textContent;
+	var inputp = document.getElementById("inputp").value;
+	var inputq = document.getElementById("inputq").value;
+	var inputr = document.getElementById("inputr").value;
+	if (inputq == question_q &&inputr == question_r){
+//	if (inputp == question_p && inputq == question_q &&inputr == question_r){
+    var lastResult = "CORRECT";
+    }else{
+    var lastResult = "WRONG";
+    }
+	document.getElementById("Q7").innerHTML = lastResult;
+}
+
+
+function gcd_two_numbers(x,y) {
+  if ((typeof x !== 'number') || (typeof y !== 'number')) 
+    return false;
+  x = Math.abs(x);
+  y = Math.abs(y);
+  while(y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+	return x;
+}
+
+function genImproperFraction(){
+    document.getElementById("inputp").value = "";
+    document.getElementById("inputq").value = "";
+    document.getElementById("inputr").value = "";
+    document.getElementById("Q7").innerHTML = "result";
+    var a = 0;
+    var b = 0;
+	while(a == b || a%b == 0){
+		var a = Math.floor(Math.random()*29+2);
+		var b = Math.floor(Math.random()*69+2)+a;
+    }    
+//	if(a < b){a=b; b=a;}
+	if(a == b){a=a+2;}
+	var questionMixFraction = a.toString() +"/"+ b.toString();
+    var numTemp = a;
+    var denTemp = b;
+	var exTitle = "If "+a.toString()+"/"+b.toString()+" =  <sup>a</sup>&frasl;<sub>b</sub>, what are the values of a and b?";
+var gcd = gcd_two_numbers(a,b);
+	var numSimp = numTemp/gcd;
+    var denSimp = denTemp/gcd;
+	var p = Math.floor(numSimp/denSimp);
+    var q = numSimp-p*denSimp;
+	var r = denSimp;    
+    var mixFraction = [p, q, r];
+	document.getElementById("Q3").innerHTML = p;
+	document.getElementById("Q4").innerHTML = q;
+	document.getElementById("Q5").innerHTML = r;
+	document.getElementById("Q1").innerHTML = a;
+    document.getElementById("Q2").innerHTML = b;
+	document.getElementById("Q6").innerHTML = exTitle;
+}
+
+</script>
+
+</body>
+</html>
