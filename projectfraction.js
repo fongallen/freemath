@@ -145,9 +145,9 @@ function gcd_two_numbers(x,y) {
 			document.getElementById("ExAndLv").innerHTML = ExAndLv;		
 			var myAns = prompt("What is the LCM of these two numbers? "+questionLCM[0]+", "+questionLCM[1]);
             if (myAns == ansLCM) {
-            var lastResult = "Correct! "+ questionLCM[2] +" is the HCF of "+questionLCM[0]+" and "+questionLCM[1];
+            var lastResult = "Correct! "+ questionLCM[2] +" is the LCM of "+questionLCM[0]+" and "+questionLCM[1];
             }else{
-            var lastResult = "Wrong, " +questionLCM[2] +" is the HCF of "+questionLCM[0]+" and "+questionLCM[1];
+            var lastResult = "Wrong, " +questionLCM[2] +" is the LCM of "+questionLCM[0]+" and "+questionLCM[1];
             }
 			return lastResult;
 			}
