@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Mixed Fraction to Improper Fraction</h1>
+<h1> a<sup>b</sup>&frasl;<sub>c</sub> ==> m/n</h1>
+<h2 id="demo">If a Mixed Fraction a<sup>b</sup>&frasl;<sub>c</sub> = m/n, what is the value of m and n?</h2>
+<p hidden id="Q1">a</p>
+<p hidden id="Q2">b</p>
+<p hidden id="Q3">c</p>
+<p hidden id="Q4">d</p>
+<p hidden id="Q5">e</p>
+<p hidden id="Q6">f</p>
+<button onclick="genMixFraction()">Start</button>
+<br>
+<br>
+<label>Numerator (m):</label><input type="number" id="num">
+<br>
+<label>Denominator (n):</label><input type="number" id="den">
+<button onclick="myFunction()">Submit</button>
+<p id="Q7">result</p>
+
+<script>
+//Numerator and denominator
+function myFunction() {
+//	document.getElementById("Q1").innerHTML = mixFraction[0];
+//    document.getElementById("Q2").innerHTML = mixFraction[1];
+	var  mixFractionNum = document.getElementById("Q1").textContent;
+	var  mixFractionDen = document.getElementById("Q2").textContent;
+	var inputNum = document.getElementById("num").value;
+	var inputDen = document.getElementById("den").value;
+//	document.getElementById("Q3").innerHTML = mixFractionNum;
+//  document.getElementById("Q4").innerHTML = mixFractionDen;
+//	document.getElementById("Q5").innerHTML = inputNum;
+//	document.getElementById("Q6").innerHTML = inputDen;
+	if(inputNum == mixFractionNum && inputDen == mixFractionDen){
+		var lastResult = "correct";
+	}else{
+		var lastResult = "wrong";
+	}
+	document.getElementById("Q7").innerHTML = lastResult;
+	return lastResult;
+}
+
+
+function gcd_two_numbers(x,y) {
+  if ((typeof x !== 'number') || (typeof y !== 'number')) 
+    return false;
+  x = Math.abs(x);
+  y = Math.abs(y);
+  while(y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+	return x;
+}
+
+
+function genMixFraction(){
+    document.getElementById("num").value = "";
+    document.getElementById("den").value = "";
+	document.getElementById("Q7").innerHTML = "result";
+	var x = new Array();
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    while(a == b || a == c || b == c){
+    for (i = 0; i < 3; i++){
+		x[i] = Math.floor(Math.random()*9+1);
+	}
+    if(x[1] > x[2]){a=x[0]; b=x[2]; c=x[1];}else{a=x[0]; b=x[1]; c=x[2]}
+	}
+	var aString = a.toString();
+    var bString = "<sup>"+b.toString()+"</sup>&frasl;";
+	var cString = "<sub>"+c.toString()+"</sub>";
+	var questionMixFraction = aString + bString + cString;
+    
+   	var numTemp = a*c+b;
+    var denTemp = c;
+	var gcd = gcd_two_numbers(numTemp,denTemp);
+	var numSimp = numTemp/gcd;
+    var denSimp = denTemp/gcd;
+    var mixFraction = [numSimp, denSimp];
+//	var myNumerator = prompt("If "+questionMixFraction+" = a/b, what is the value of a?");
+//	var myDenominator = prompt("If "+questionMixFraction+" = a/b, what is the value of b?");
+    document.getElementById("demo").innerHTML = "If a Mixed Fraction "+ questionMixFraction+" =m/n, what is the value of m and n?";
+	document.getElementById("Q1").innerHTML = numSimp;
+    document.getElementById("Q2").innerHTML = denSimp;
+//    document.getElementById("Q3").innerHTML = cString;
+//    return mixFraction;
+}
+</script>
+
+</body>
+</html>
