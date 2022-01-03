@@ -2,8 +2,6 @@
 <html>
 <head>
 	
-<script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="dictationstyle.css">
 
 <h1>Dictation</h1>
@@ -90,29 +88,42 @@
 
 
 <script>
+var msg = new SpeechSynthesisUtterance();
+var voices = window.speechSynthesis.getVoices();
+msg.voice = voices[1];
+msg.volume = 1; // From 0 to 1
+msg.pitch = 0.5; // From 0 to 2
+msg.rate = 0.75; // From 0.1 to 10
+msg.lang = 'eng';
+
 function speakText0(){
-  var text0 = document.getElementById('text0').value;
-  responsiveVoice.speak(text0,"US English Female",{rate: 0.75});
+var text0 = document.getElementById('text0').value;
+msg.text = text0;
+window.speechSynthesis.speak(msg);
 }
 
 function speakText1(){
-  var text1 = document.getElementById('text1').value;
-  responsiveVoice.speak(text1,"US English Female",{rate: 0.75});
+var text1 = document.getElementById('text1').value;
+msg.text = text1;
+window.speechSynthesis.speak(msg);
 }
 
 function speakText2(){
-  var text2 = document.getElementById('text2').value;
-  responsiveVoice.speak(text2,"US English Female",{rate: 0.75});
+var text2 = document.getElementById('text2').value;
+msg.text = text2;
+window.speechSynthesis.speak(msg);
 }
 
 function speakText3(){
-  var text3 = document.getElementById('text3').value;
-  responsiveVoice.speak(text3,"US English Female",{rate: 0.75});
+var text3 = document.getElementById('text3').value;
+msg.text = text3;
+window.speechSynthesis.speak(msg);
 }
 
 function speakText4(){
-  var text4 = document.getElementById('text4').value;
-  responsiveVoice.speak(text4,"US English Female",{rate: 0.75});
+var text4 = document.getElementById('text4').value;
+msg.text = text4;
+window.speechSynthesis.speak(msg);
 }
 
 function checking(){
