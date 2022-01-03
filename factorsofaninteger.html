@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Factors of an Integer</h1>
+
+<button hidden onclick="myFunction()">New Question</button>
+
+<h2 id="demo11"></h2>
+<p hidden id="demo13"></p>
+<p hidden id="demo14"></p>
+
+<input type="number" id="myNumber" value="0">
+
+<button onclick="myAnswer()">Check the Answer</button>
+<br>
+<br>
+<button onclick="myFunction()">New Question</button>
+<h2 style="color:Red" id="demo12"></h2>
+
+
+
+<script>
+var num1 = 0;
+var num2 = 0;
+
+
+// num1, num2: the random numbers
+// text[]: array of remainder
+// count: number of factors
+// ans: array of factors
+
+//const num = 3;
+
+function myFunction() {
+var a1 = Math.floor(Math.random()*99+1);
+var a2 = Math.floor(Math.random()*99+1);
+document.getElementById("demo12").innerHTML = "";
+
+if (a1 > a2) {
+num1 = a2;
+num2 = a1;
+} else {
+num2 = a2;
+num1 = a1;
+}
+
+var text1 = [];
+var text2 = [];
+var ans1 = [];
+var ans2 = [];
+text1[0] = "a";
+text2[0] = "a";
+//ans[0] = "a";
+var count1 = 0;
+var count2 = 0;
+var HCF1 = 1;
+var HCF = 0;
+
+for (i = num1; i >0; i--) {
+text1[i] = num1 % i;
+if(text1[i] == 0){
+count1++;
+ans1[count1-1] = i;
+}
+}
+
+for (i = num2; i >0; i--) {
+text2[i] = num2 % i;
+if(text2[i] == 0){
+count2++;
+ans2[count2-1] = i;
+}
+}
+
+for (i = 0; i <(ans1.length); i++) {
+HCF1 = num2 % ans1[i];
+if (HCF1 == 0){
+HCF = ans1[i];
+LCM = num1 * num2 / HCF;
+break;
+}
+}
+
+//if (HCF != 1 && LCM < 200){myFunction()};
+//if (LCM > 200 || HCF == 1){myFunction()};
+//if (LCM > 200){document.getElementById("demo33").innerHTML = "True"};
+//if (LCM > 200){myFunction()};
+
+document.getElementById("demo11").innerHTML = "How many factors of "+num1+" ?";
+//document.getElementById("demo12").innerHTML = text.toString();
+document.getElementById("demo13").innerHTML = count1;
+document.getElementById("demo14").innerHTML = ans1;
+
+document.getElementById("demo21").innerHTML = "How many factors of "+num2+" ?";
+//document.getElementById("demo22").innerHTML = text.toString();
+document.getElementById("demo23").innerHTML = count2;
+document.getElementById("demo24").innerHTML = ans2;
+
+document.getElementById("demo31").innerHTML = "HCF of "+num1+" and "+num2+" is "+ HCF +" .";
+document.getElementById("demo32").innerHTML = "LCM of "+num1+" and "+num2+" is "+ LCM +" .";
+//document.getElementById("demo33").innerHTML = (HCF == 1)+"and"+(LCM>200);
+document.getElementById("demo33").innerHTML = (HCF == 1)+" and "+(LCM < 200)+ " ==> "+(HCF == 1 || LCM < 200);
+
+//document.getElementById("demo32").innerHTML = "LCM is "+ LCM +" .";
+//document.getElementById("demo31").innerHTML = HCF;
+}
+
+function myAnswer(){
+var x = document.getElementById("myNumber").value;
+var ans = document.getElementById("demo13").innerHTML;
+if (x == ans){
+document.getElementById("demo12").innerHTML = "correct";
+} else {
+document.getElementById("demo12").innerHTML = "wrong, the answer is "+ans+" .";
+}
+}
+
+
+
+</script>
+
+</body>
+</html>
