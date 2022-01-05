@@ -5,7 +5,6 @@
 <h1>m/n ==> a<sup>b</sup>&frasl;<sub>c</sub></h1>
 <h2 id="demo">If a Improper Fraction 5/3 =  a<sup>b</sup>&frasl;<sub>c</sub>, what are the values of a, b and c? (a = 1, b = 2 and c = 3)</h2>
 <p id="Q6">Question</p>
-<p id="Q7">result</p>
 <button onclick="genImproperFraction()">NEW QUESTION</button>
 <br>
 <br>
@@ -21,13 +20,21 @@
 <p hidden id="Q4">d</p>
 <p hidden id="Q5">e</p>
 <br>
+<br>
   <form action="https://fongallen.github.io/freemath/index.html">
     <button type="submit">HOME</button>
   </form>
+<br>
+<br>
+<h2 style="color:Red" id="Q7">result</h2>	
+<h2 style="color:Red" id="demo15"></h2>
+
 	
 <script>
 //Numerator and denominator
-
+var ansCorrect = 0;
+var ansWrong = 0;
+	
 function myFunction() {
 	var  question_p = document.getElementById("Q3").textContent;
 	var  question_q = document.getElementById("Q4").textContent;
@@ -37,10 +44,13 @@ function myFunction() {
 	var inputr = document.getElementById("inputr").value;
 	if (inputp == question_p && inputq == question_q &&inputr == question_r){
     var lastResult = "CORRECT";
+    ansCorrect = ansCorrect+1;
     }else{
     var lastResult = "WRONG";
+    ansWrong = ansWrong + 1;
     }
 	document.getElementById("Q7").innerHTML = lastResult;
+	document.getElementById("demo15").innerHTML = "Score: "+ansCorrect+ " / " +(ansCorrect+ansWrong);
 }
 
 
