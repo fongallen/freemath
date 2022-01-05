@@ -17,13 +17,21 @@
 <br>
 <label>Denominator (n):</label><input type="number" id="den">
 <button onclick="myFunction()">Submit</button>
-<p id="Q7">result</p>
+<br>
 <br>
   <form action="https://fongallen.github.io/freemath/index.html">
     <button type="submit">HOME</button>
   </form>
+<br>
+<br>
+<h2 style="color:Red" id="Q7">result</h2>
+<h2 style="color:Red" id="demo15"></h2>
+
 	
 <script>
+var ansCorrect = 0;
+var ansWrong = 0;
+	
 //Numerator and denominator
 function myFunction() {
 //	document.getElementById("Q1").innerHTML = mixFraction[0];
@@ -38,10 +46,13 @@ function myFunction() {
 //	document.getElementById("Q6").innerHTML = inputDen;
 	if(inputNum == mixFractionNum && inputDen == mixFractionDen){
 		var lastResult = "correct";
+		ansCorrect = ansCorrect+1;
 	}else{
 		var lastResult = "wrong";
+		ansWrong = ansWrong + 1;
 	}
 	document.getElementById("Q7").innerHTML = lastResult;
+	document.getElementById("demo15").innerHTML = "Score: "+ansCorrect+ " / " +(ansCorrect+ansWrong);
 	return lastResult;
 }
 
