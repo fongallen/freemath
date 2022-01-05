@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -22,11 +23,15 @@
   <form action="https://fongallen.github.io/freemath/index.html">
     <button type="submit">HOME</button>
   </form>
+<br>
+<p style="color:Red" id="demo15"></p>
 
 
 <script>
 var num1 = 0;
 var num2 = 0;
+var ansCorrect = 0;
+var ansWrong = 0;
 
 
 // num1, num2: the random numbers
@@ -110,14 +115,18 @@ document.getElementById("demo33").innerHTML = (HCF == 1)+" and "+(LCM < 200)+ " 
 //document.getElementById("demo31").innerHTML = HCF;
 }
 
+
 function myAnswer(){
 var x = document.getElementById("myNumber").value;
 var ans = document.getElementById("demo13").innerHTML;
 if (x == ans){
 document.getElementById("demo12").innerHTML = "correct";
+ansCorrect = ansCorrect+1;
 } else {
 document.getElementById("demo12").innerHTML = "wrong, the answer is "+ans+" .";
+ansWrong = ansWrong + 1;
 }
+document.getElementById("demo15").innerHTML = "Score: "+ansCorrect+ " / " +(ansCorrect+ansWrong);
 }
 
 
@@ -126,3 +135,4 @@ document.getElementById("demo12").innerHTML = "wrong, the answer is "+ans+" .";
 
 </body>
 </html>
+
