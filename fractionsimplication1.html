@@ -7,7 +7,8 @@
 <h1>Fraction Simplification</h1>
 <h1 id="demo">Simplify Friction 5/10. (Ans. 1/2)</h1>
 <h2 id="Q6">Question</h2>
-<h2 id="Q7">result</h2>
+<br>
+<br>
 <button onclick="genImproperFraction()">New Question</button>
 <br>
 <br>
@@ -22,13 +23,19 @@
 <p hidden id="Q4">d</p>
 <p hidden id="Q5">e</p>
 <br>
+<br>
   <form action="https://fongallen.github.io/freemath/index.html">
     <button type="submit">HOME</button>
   </form>
-	
-<script>
-//Numerator and denominator
+<br>
+<h2 style="color:Red" id="Q7">result</h2>
+<h2 style="color:Red" id="demo15"></h2>	
 
+<script>
+var ansCorrect = 0;
+var ansWrong = 0;
+	
+//Numerator and denominator
 function myFunction() {
 	var  question_p = document.getElementById("Q3").textContent;
 	var  question_q = document.getElementById("Q4").textContent;
@@ -39,10 +46,13 @@ function myFunction() {
 	if (inputq == question_q &&inputr == question_r){
 //	if (inputp == question_p && inputq == question_q &&inputr == question_r){
     var lastResult = "CORRECT";
+    ansCorrect = ansCorrect+1;
     }else{
     var lastResult = "WRONG";
+    ansWrong = ansWrong + 1;
     }
 	document.getElementById("Q7").innerHTML = lastResult;
+	document.getElementById("demo15").innerHTML = "Score: "+ansCorrect+ " / " +(ansCorrect+ansWrong);
 }
 
 
