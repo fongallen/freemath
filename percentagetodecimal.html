@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Percentage to Decimal</h1>
+
+<button hidden onclick="myFunction()">New Question</button>
+
+<h2 id="demo11"></h2>
+<p hidden id="demo13">demo13</p>
+<p hidden id="demo14"></p>
+
+<input id="myNumber">
+
+<button onclick="myAnswer()">Check the Answer</button>
+<br>
+<br>
+<button onclick="myFunction()">New Question</button>
+<br>
+<br>
+  <form action="https://fongallen.github.io/freemath/index.html">
+    <button type="submit">HOME</button>
+  </form>
+<br>
+<h2 style="color:Red" id="demo15"></h2>
+<h2 style="color:Red" id="demo12"></h2>
+
+<script>
+var num1 = 0;
+var ansCorrect = 0;
+var ansWrong = 0;
+
+function myFunction() {
+	var a1 = Math.floor(Math.random()*1000)/1000;
+	document.getElementById("demo11").innerHTML = "Converting Percentages to Decimals ： "+ Math.floor(a1*1000)/10+"%";
+	document.getElementById("demo13").innerHTML = a1;
+}
+
+
+function myAnswer(){
+var x = document.getElementById("myNumber").value;
+var ans = document.getElementById("demo13").innerHTML;
+
+if (parseFloat(ans) == x){
+document.getElementById("demo12").innerHTML = "correct";
+ansCorrect = ansCorrect+1;
+} else {
+document.getElementById("demo12").innerHTML = "wrong";
+ansWrong = ansWrong + 1;
+}
+document.getElementById("demo15").innerHTML = "Score: "+ansCorrect+ " / " +(ansCorrect+ansWrong);
+}
+
+
+
+</script>
+
+</body>
+</html>
