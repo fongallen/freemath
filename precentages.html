@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Free Maths - Precentages</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="projectdec.CSS">
+<script src="projectdec.js"></script>
+
+</head>
+<body>
+
+<div class="sidenav">
+  <button class="dropdown-btn" onclick="location.href='index.html'">HOME</button>
+  <button class="dropdown-btn" onclick="location.href='precentagetodecimal.html'">Precentages to Decimals
+  </button>
+  <button class="dropdown-btn" onclick="location.href='decimaltoprecentage.html'">Decimals to Precentages
+  </button>
+</div>
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 
