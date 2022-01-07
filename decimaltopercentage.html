@@ -14,7 +14,7 @@
 
 <input id="myNumber">
 
-<button onclick="myAnswer()">Check the Answer</button>
+<button id="myBtn" onclick="myAnswer()">Check the Answer</button>
 <br>
 <br>
 <button onclick="myFunction()">New Question</button>
@@ -32,6 +32,14 @@ var num1 = 0;
 var ansCorrect = 0;
 var ansWrong = 0;
 
+var input = document.getElementById("myNumber");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});	
+	
 function myFunction() {
 	var a1 = Math.floor(Math.random()*1000)/1000;
 	document.getElementById("demo11").innerHTML = "Converting Decimals to Percentages ： "+ a1;
