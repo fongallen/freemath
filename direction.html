@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img id="img" src="https://fongallen.github.io/freemath/compass2.jpg"/>
+<br>
+<br>
+<p hidden id="demo1">demo1</p>
+<p hidden id="demo2">demo2</p>
+<h2 id="demo3">Question</h2>
+<p hidden id="demo4">demo4</p>
+<button onclick="myFunction()">New Question</button>
+<br>
+<br>
+<input id="myNumber">
+<button id="myBtn" onclick="myAnswer()">Check the Answer</button>
+<br>
+<br>
+  <form action="https://fongallen.github.io/freemath/index.html">
+    <button type="submit">HOME</button>
+  </form>
+<br>
+<h2 style="color:Red" id="demo12"></h2>
+<h2 style="color:Red" id="demo15"></h2>
+
+<script>
+img.style.height = '300px';
+img.style.width = '300px';
+var ansWrong = 0;
+var ansCorrect = 0;    
+
+const array7 = new Array('NE','E','SE','S','SW','W','NW','N'); //N=8
+const array6 = new Array('E','SE','S','SW','W','NW','N','NE'); //N=7
+const array5 = new Array('SE','S','SW','W','NW','N','NE','E'); //N=6
+const array4 = new Array('S','SW','W','NW','N','NE','E','SE'); //N=5
+const array3 = new Array('SW','W','NW','N','NE','E','SE','S'); //N=4
+const array2 = new Array('W','NW','N','NE','E','SE','S','SW'); //N=3
+const array1 = new Array('NW','N','NE','E','SE','S','SW','W'); //N=2
+const array0 = new Array('N','NE','E','SE','S','SW','W','NW'); //N=1
+const question = new Array(array0,array1,array2,array3,array4,array5,array6,array7);
+//const cars = new Array("Saab", "Volvo", "BMW");
+
+var input = document.getElementById("myNumber");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+})
+
+function myFunction() {
+    min1 = 0;
+    max1 = 7;
+    a1 = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+    min1 = 0;
+    max1 = 7;
+    a2 = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+	if (a1==a2){myFunction()};
+document.getElementById("demo1").innerHTML = question[a1]+" ,"+(a1+1)+" ,"+ a1;
+document.getElementById("demo2").innerHTML = question[a1][a2]+" ,"+(a2+1)+" ,"+ a2;
+document.getElementById("demo3").innerHTML = "If the direction of NORTH is "+(a1+1)+" ,"+ "which number is the direction of "+ question[a1][a2]+" ?";
+document.getElementById("demo4").innerHTML = (a2+1);
+}
+
+function myAnswer(){
+var x = document.getElementById("myNumber").value;
+var ans = document.getElementById("demo4").innerHTML;
+
+if (ans == x){
+document.getElementById("demo12").innerHTML = "correct";
+ansCorrect = ansCorrect+1;
+} else {
+document.getElementById("demo12").innerHTML = "wrong";
+ansWrong = ansWrong + 1;
+}
+document.getElementById("myNumber").value = "";
+myFunction();
+document.getElementById("demo15").innerHTML = "Score: "+ansCorrect+ " / " +(ansCorrect+ansWrong);
+}
+
+</script>
+</body></html>
