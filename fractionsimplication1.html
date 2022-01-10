@@ -53,7 +53,8 @@ function myFunction() {
     }
 	document.getElementById("Q7").innerHTML = lastResult;
 	document.getElementById("demo15").innerHTML = "Score: "+ansCorrect+ " / " +(ansCorrect+ansWrong);
-}
+	genImproperFraction();
+	}
 
 
 function gcd_two_numbers(x,y) {
@@ -70,6 +71,12 @@ function gcd_two_numbers(x,y) {
 }
 
 function genImproperFraction(){
+	const primeNum = new Array(2,3,5,7,11);
+	const min1 = 0;
+    const max1 = 4;
+	var a1 = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+	var primeNumMix = primeNum[a1];
+
     document.getElementById("inputp").value = "";
     document.getElementById("inputq").value = "";
     document.getElementById("inputr").value = "";
@@ -77,8 +84,8 @@ function genImproperFraction(){
     var a = 0;
     var b = 0;
 	while(a == b || a%b == 0){
-		var a = Math.floor(Math.random()*29+2);
-		var b = Math.floor(Math.random()*69+2)+a;
+		var a = primeNumMix * Math.floor(Math.random()*19+2);
+		var b = primeNumMix * Math.floor(Math.random()*39+2)+a;
     }    
 //	if(a < b){a=b; b=a;}
 	if(a == b){a=a+2;}
